@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%">
+	
+	<mx:Metadata>
+		[Event(name="selectDefinition", type="flash.events.Event")]
+	</mx:Metadata>
+	
+	<mx:Script>
+		<![CDATA[
+			import common.model.Definition;
+			import mx.collections.IList;
+			
+			[Bindable] public var definitions:IList;
+			
+			public function get selectedDefinition():Definition
+			{
+				return list.selectedItem as Definition;
+			}
+			
+			private function onSelect():void
+			{
+				dispatchEvent(new Event("selectDefinition"));
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:List id="list" dataProvider="{definitions}" itemClick="onSelect()" width="100%" height="100%">
+		<mx:itemRenderer>
+			<mx:Component>
+				<mx:Label text="{data.word}"/>
+			</mx:Component>
+		</mx:itemRenderer>
+	</mx:List>
+</mx:VBox>

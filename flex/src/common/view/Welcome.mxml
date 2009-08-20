@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml">
+	
+	<mx:Metadata>
+		[Event(name="logout", type="flash.events.Event")]
+	</mx:Metadata>
+	
+	<mx:Script>
+		<![CDATA[
+			import common.model.User;
+			[Bindable] public var user:User;
+			
+			private function logout():void
+			{
+				dispatchEvent(new Event("logout"));
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:Label text="Welcome {user.username}"/>
+	<mx:LinkButton label="logout"/>
+</mx:HBox>

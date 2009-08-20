@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:mx="http://www.adobe.com/2006/mxml" layout="horizontal" verticalCenter="0" horizontalCenter="0" width="600" height="400" title="Dictionary">
+	
+</mx:Panel>

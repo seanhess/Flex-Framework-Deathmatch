@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Object xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:model="common.model.*">
+	
+	<mx:ArrayCollection id="definitions">
+		<model:Definition word="Flex" definition="A sweet component framework for flash"/>
+		<model:Definition word="ActionScript" definition="An ECMA-based language for flash"/>
+		<model:Definition word="Deathmatch" definition="A competition in which only one framework can survive"/>
+		<model:Definition word="Flash" definition="A runtime that's even better than silverlight"/>
+	</mx:ArrayCollection>
+	
+	<mx:ArrayCollection>
+		<model:User id="fakeUser" username="fake" password="fake"/>
+	</mx:ArrayCollection>
+	
+</mx:Object>

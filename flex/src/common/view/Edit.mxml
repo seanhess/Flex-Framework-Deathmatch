@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%">
+	
+	<mx:Metadata>
+		[Event(name="update", type="flash.events.Event")]
+		[Event(name="cancel", type="flash.events.Event")]
+		[Event(name="remove", type="flash.events.Event")]
+	</mx:Metadata>
+	
+	<mx:Script>
+		<![CDATA[
+			import common.model.Definition;
+			
+			[Bindable] public var definition:Definition;
+			
+			private function submit():void
+			{
+				dispatchEvent(new Event("update"));
+			}
+			
+			private function cancel():void
+			{
+				dispatchEvent(new Event("cancel"));
+			}
+			
+			private function remove():void
+			{
+				dispatchEvent(new Event("remove"));
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:Form>
+		<mx:FormItem label="Word">
+			<mx:TextInput text="{definition.word}"/>
+		</mx:FormItem>
+		
+		<mx:FormItem label="Definition">
+			<mx:TextArea text="{definition.definition}"/>
+		</mx:FormItem>
+		
+		<mx:FormItem direction="horizontal">
+			<mx:Button label="Update" click="submit()"/>
+			<mx:Button label="Delete" click="remove()"/>
+			<mx:Button label="Cancel" click="cancel()"/>
+		</mx:FormItem>
+	</mx:Form>
+	
+</mx:VBox>
